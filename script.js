@@ -51,7 +51,9 @@ function generatePassword() {
     if (properties.numbers) characters.push(...numbers);
     if (properties.special) characters.push(...special);
 
-    console.log(characters);
+    if (characters.length === 0) {
+        return alert("You must select at least one set of characters");
+    }
 
     let pwd = [];
     for (let i = 0; i < length; i++) {};
