@@ -55,6 +55,12 @@ function generatePassword() {
         return alert("You must select at least one set of characters");
     }
 
-    let pwd = [];
-    for (let i = 0; i < length; i++) {};
+    let pwd = []; // Creates an empty array
+    for (let i = 0; i < length; i++) { // Looping through the length of the password
+        const randomIdx = Math.floor(Math.random() * characters.length); // Generating random index from selected characters. Gets values less than the length
+        const char = characters[randomIdx]; // Getting the character at the random index
+        pwd.push(char); // Pushing the character into the password
+    }
+    const pwdString = pwd.join(""); // Converts into a string
+    document.getElementById("password").innerHTML = "<p>" + pwdString + "</p>"; // Sets the password in the html element to display
 }
